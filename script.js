@@ -33,33 +33,6 @@ const CERTS = [
   { abbr:"AWS",  name:"AWS Cloud Practitioner", meta:"Planned · 2026" }
 ];
 
-const PROJECTS = [
-  { title:"VaultPass", cat:"Security", year:"2025",
-    summary:"A zero-knowledge password manager where the server never sees plaintext data.",
-    problem:"Users reuse weak passwords and most free managers require trusting a third-party server.",
-    approach:"Client-side AES-256-GCM encryption with PBKDF2 key derivation; breach checks via k-anonymity API.",
-    outcome:"End-to-end encrypted vault with sub-100ms unlock and zero plaintext stored server-side.",
-    stack:["React","Node.js","WebCrypto","PostgreSQL"], code:"#", live:"#" },
-  { title:"TaskForge", cat:"Engineering", year:"2025",
-    summary:"A real-time task management platform for small teams.",
-    problem:"Capstone client needed a lightweight alternative to costly project tools.",
-    approach:"React front end, Express API, WebSocket sync, JWT auth with role-based access control.",
-    outcome:"Delivered to 3 student teams; 94% test coverage and zero critical findings in security review.",
-    stack:["React","Express","MongoDB","Socket.io"], code:"#", live:"#" },
-  { title:"NetSentinel", cat:"Security", year:"2024",
-    summary:"An intrusion detection dashboard that surfaces suspicious network behaviour.",
-    problem:"Raw packet captures are difficult for junior analysts to triage quickly.",
-    approach:"Python pipeline parses PCAPs with Scapy, flags port scans and brute force patterns, visualises in Flask.",
-    outcome:"Reduced manual triage time in lab exercises by roughly 70%.",
-    stack:["Python","Scapy","Flask","Chart.js"], code:"#", live:"" },
-  { title:"ShopSecure API", cat:"Engineering", year:"2024",
-    summary:"A hardened e-commerce REST API with security tests built into CI.",
-    problem:"Typical tutorial APIs ignore injection, CSRF and rate-limiting concerns.",
-    approach:"Parameterised queries, input validation, CSRF tokens, rate limiting and automated OWASP ZAP scans in CI.",
-    outcome:"Passed all OWASP ZAP baseline checks; documented as a secure reference implementation.",
-    stack:["Node.js","PostgreSQL","Jest","GitHub Actions"], code:"#", live:"" }
-];
-
 const EXPERIENCE = [
   { when:"Dec 2024 — Present", title:"Full-Stack Developer", org:"WebEquator · Remote", type:"Work",
     points:[
@@ -96,119 +69,6 @@ $("#bento").innerHTML = CAPABILITIES.map(c => `
 $("#certs").innerHTML = CERTS.map(c => `
   <div class="cert glass"><i>${c.abbr}</i><div><b>${c.name}</b><small>${c.meta}</small></div></div>`).join("");
 
-function renderWork(filter="all"){
-  const list = PROJECTS.filter(p => filter==="all" || p.cat===filter);
-  $("#work-list").innerHTML = list.map((p,i) => `
-    <article class="case glass" style="animation-delay:${i*.07}s"><span class="edge"></span>
-      <span class="num">${String(PROJECTS.indexOf(p)+1).padStart(2,"0")} / ${p.year}</span>
-      <div>
-        <span class="cat">${p.cat}</span>
-        <h3>${p.title}</h3>
-        <p class="summary">${p.summary}</p>
-        <div class="tags">${p.stack.map(s=>`<span>${s}</span>`).join("")}</div>
-      </div>
-      <dl>
-        <dt>Problem</dt><dd>${p.problem}</dd>
-        <dt>Approach</dt><dd>${p.approach}</dd>
-        <dt>Outcome</dt><dd>${p.outcome}</dd>
-      </dl>
-      <div class="links">
-        ${p.code?`<a href="${p.code}" target="_blank" rel="noopener" data-track="project-${p.title}-source">Source ↗</a>`:""}
-        ${p.live?`<a href="${p.live}" target="_blank" rel="noopener" data-track="project-${p.title}-live">Live ↗</a>`:""}
-      </div>
-    </article>`).join("");
-  bindGlass();
-}
-renderWork();
-$$(".filter").forEach(b => b.addEventListener("click", () => {
-  $(".filter.active").classList.remove("active"); b.classList.add("active"); renderWork(b.dataset.f);
-}));
-
-$("#xp").innerHTML = EXPERIENCE.map(x => `
-  <li class="reveal"><span class="when">${x.when}</span>
-    <div><h3>${x.title}</h3><p class="org">${x.org}</p>
-    ${x.points ? `<ul class="xp-list">${x.points.map(p => `<li>${p}</li>`).join("")}</ul>` : `<p>${x.text}</p>`}
-    </div>
-    <span class="type">${x.type}</span></li>`).join("");
-
-$("#yr").textContent = new Date().getFullYear();
-
-/* ==========================================================
-   INTERACTIONS
-   ========================================================== */
-// Real refraction where supported (desktop Chromium)
-const ua = navigator.userAgent;
-if (/Chrome|Edg/.test(ua) && !/Mobile|Android|CriOS/.test(ua) && innerWidth > 960) document.documentElement.classList.add("refract");
-
-// Scroll reveal + counters
-const io = new IntersectionObserver(entries => entries.forEach(e => {
-  if (!e.isIntersecting) return;
-  e.target.classList.add("in");
-  const n = e.target.querySelector("[data-count]");
-  if (n) countUp(n);
-  io.unobserve(e.target);
-}), { threshold: .12, rootMargin: "0px 0px -40px 0px" });
-$$(".reveal").forEach(el => io.observe(el));
-
-function countUp(el){
-  const end = +el.dataset.count, suffix = el.dataset.suffix || (end >= 10 ? "+" : ""), dur = 1400, t0 = performance.now();
-  (function tick(t){
-    const p = Math.min(1, (t - t0) / dur), eased = 1 - Math.pow(1 - p, 3);
-    el.textContent = Math.round(end * eased) + (p === 1 ? suffix : "");
-    if (p < 1) requestAnimationFrame(tick);
-  })(t0);
-}
-
-// Glass specular highlight follows pointer
-function bindGlass(){
-  $$(".glass").forEach(g => {
-    if (g._bound) return; g._bound = true;
-    g.addEventListener("pointermove", e => {
-      const r = g.getBoundingClientRect();
-      g.style.setProperty("--mx", `${e.clientX - r.left}px`);
-      g.style.setProperty("--my", `${e.clientY - r.top}px`);
-    });
-  });
-}
-bindGlass();
-
-// Background spotlight + hero parallax
-const root = document.documentElement, hero = $("#parallax");
-const fine = matchMedia("(pointer:fine)").matches;
-if (fine) addEventListener("pointermove", e => {
-  root.style.setProperty("--sx", `${e.clientX}px`);
-  root.style.setProperty("--sy", `${e.clientY}px`);
-  const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
-  $$("[data-depth]", hero).forEach(el => {
-    const d = +el.dataset.depth;
-    el.style.transform = `translate3d(${-x*d}px, ${-y*d}px, 0)`;
-  });
-}, { passive: true });
-
-// Nav: active section + mobile menu
-const menu = $("#menu"), burger = $(".burger");
-burger.addEventListener("click", () => {
-  const open = menu.classList.toggle("open");
-  burger.classList.toggle("x", open); burger.setAttribute("aria-expanded", open);
-});
-$$("#menu a").forEach(a => a.addEventListener("click", () => { menu.classList.remove("open"); burger.classList.remove("x"); }));
-const sections = $$("main section[id]");
-addEventListener("scroll", () => {
-  const y = scrollY + 160;
-  sections.forEach(s => {
-    const a = $(`#menu a[href="#${s.id}"]`);
-    if (a) a.classList.toggle("active", y >= s.offsetTop && y < s.offsetTop + s.offsetHeight);
-  });
-}, { passive: true });
-
-// Copy email
-const copyBtn = $("#copyEmail");
-copyBtn.addEventListener("click", async () => {
-  try { await navigator.clipboard.writeText(copyBtn.dataset.email); }
-  catch { location.href = `mailto:${copyBtn.dataset.email}`; return; }
-  track("email-copy"); const l = $(".copy-label", copyBtn); l.textContent = "Copied"; setTimeout(() => l.textContent = "Copy", 1800);
-});
-
 /* ==========================================================
    INTERACTIVE CONSOLE
    ========================================================== */
@@ -217,7 +77,6 @@ const COMMANDS = {
   help: () => `Available commands:
   <span class="hl">whoami</span>      short introduction
   <span class="hl">skills</span>      technical skills
-  <span class="hl">projects</span>    selected work
   <span class="hl">education</span>   credentials
   <span class="hl">contact</span>     how to reach me
   <span class="hl">resume</span>      download résumé
@@ -225,14 +84,13 @@ const COMMANDS = {
   whoami: () => `${PROFILE.name} — software developer and cybersecurity specialist based in ${PROFILE.location}.
 I build secure, maintainable applications and review code with an attacker's mindset.`,
   skills: () => CAPABILITIES.map(c => `<span class="hl">${c.title}</span>\n  ${c.tags.join(" · ")}`).join("\n"),
-  projects: () => PROJECTS.map((p,i) => `${String(i+1).padStart(2,"0")}  <span class="hl">${p.title.padEnd(16)}</span>${p.summary}`).join("\n"),
   education: () => EXPERIENCE.filter(x => x.type === "Education").map(x => `<span class="hl">${x.title}</span> — ${x.org} (${x.when})`).join("\n"),
   contact: () => `email     <a class="hl" href="mailto:${PROFILE.email}">${PROFILE.email}</a>
 linkedin  <a class="hl" href="${PROFILE.linkedin}" target="_blank" rel="noopener">${PROFILE.linkedin.replace("https://","")}</a>
 github    <a class="hl" href="${PROFILE.github}" target="_blank" rel="noopener">${PROFILE.github.replace("https://","")}</a>`,
   resume: () => { setTimeout(() => { const a = document.createElement("a"); a.href = "resume.pdf"; a.download = ""; a.click(); }, 300); return "Downloading résumé…"; },
   sudo: () => "Nice try. Access is granted by interview only — type <span class=\"hl\">contact</span>.",
-  ls: () => "about.md  projects/  resume.pdf  contact.txt",
+  ls: () => "about.md  resume.pdf  contact.txt",
   clear: () => { body.innerHTML = ""; return null; }
 };
 const history = []; let hIdx = 0;
@@ -506,76 +364,6 @@ function scrollFx(){
 requestAnimationFrame(scrollFx);
 
 /* ==========================================================
-   LAB — AES-256-GCM encryption demo (Web Crypto API)
-   ========================================================== */
-(function(){
-  const msg = $("#labMsg"), pass = $("#labPass"), status = $("#labStatus"),
-        cOut = $("#labCipher"), pOut = $("#labPlain"), saltEl = $("#labSalt"), ivEl = $("#labIv"),
-        bEnc = $("#labEnc"), bDec = $("#labDec"), bTam = $("#labTamper");
-  const enc = new TextEncoder(), dec = new TextDecoder();
-  const hex = b => [...b].map(x => x.toString(16).padStart(2, "0")).join("");
-  const b64 = b => btoa(String.fromCharCode(...b));
-  let state = null;
-
-  if (!(window.crypto && crypto.subtle)) { status.textContent = "Web Crypto is unavailable here (needs HTTPS)."; status.className = "lab-status mono err"; bEnc.disabled = true; return; }
-
-  async function deriveKey(passphrase, salt){
-    const base = await crypto.subtle.importKey("raw", enc.encode(passphrase), "PBKDF2", false, ["deriveKey"]);
-    return crypto.subtle.deriveKey({ name: "PBKDF2", salt, iterations: 250000, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
-  }
-  function scrambleTo(el, text, dur = 700){
-    if (reduce) { el.textContent = text; return; }
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-    const t0 = performance.now();
-    (function step(t){
-      const p = Math.min(1, (t - t0) / dur), n = Math.floor(text.length * p);
-      el.textContent = text.slice(0, n) + [...text.slice(n)].map(c => c === " " ? " " : chars[Math.random() * chars.length | 0]).join("");
-      if (p < 1) requestAnimationFrame(step);
-    })(t0);
-  }
-  function setStatus(t, cls = ""){ status.textContent = t; status.className = "lab-status mono " + cls; }
-
-  $("#labShow").addEventListener("click", e => { const show = pass.type === "password"; pass.type = show ? "text" : "password"; e.target.textContent = show ? "Hide" : "Show"; });
-
-  bEnc.addEventListener("click", async () => {
-    if (!msg.value.trim() || !pass.value) return setStatus("Enter a message and a passphrase.", "err");
-    bEnc.disabled = true; setStatus("Deriving 256-bit key (250,000 PBKDF2 rounds)…");
-    const t0 = performance.now();
-    const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
-    const key = await deriveKey(pass.value, salt);
-    const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, enc.encode(msg.value)));
-    state = { salt, iv, ct };
-    scrambleTo(cOut, b64(ct)); saltEl.textContent = hex(salt); ivEl.textContent = hex(iv);
-    pOut.textContent = "—"; pOut.classList.remove("err");
-    setStatus(`Encrypted ${msg.value.length} characters in ${Math.round(performance.now() - t0)} ms. Now try decrypting.`, "ok");
-    bEnc.disabled = false; bDec.disabled = false; bTam.disabled = false;
-    track("lab-encrypt");
-  });
-
-  bDec.addEventListener("click", async () => {
-    if (!state) return;
-    setStatus("Verifying authentication tag and decrypting…");
-    try {
-      const key = await deriveKey(pass.value, state.salt);
-      const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv: state.iv }, key, state.ct);
-      pOut.classList.remove("err"); scrambleTo(pOut, dec.decode(pt), 600);
-      setStatus("Integrity verified ✓ — message decrypted successfully.", "ok");
-    } catch {
-      pOut.classList.add("err"); pOut.textContent = "✕ Decryption rejected";
-      setStatus("Authentication failed: wrong passphrase or tampered ciphertext. AES-GCM refused to return any data.", "err");
-    }
-  });
-
-  bTam.addEventListener("click", () => {
-    if (!state) return;
-    const i = Math.random() * state.ct.length | 0;
-    state.ct = state.ct.slice(); state.ct[i] ^= 1 << (Math.random() * 8 | 0);
-    cOut.textContent = b64(state.ct); cOut.classList.remove("flash"); void cOut.offsetWidth; cOut.classList.add("flash");
-    setStatus(`Flipped one bit at byte ${i}. Click Decrypt to see what happens.`, "err");
-  });
-})();
-
-/* ==========================================================
    CONTACT FORM — messages are stored in a private Google Sheet
    (a "notepad" you can open anytime) with the arrival date.
    Set PROFILE.formEndpoint to your Apps Script Web App URL.
@@ -589,9 +377,13 @@ $("#form").addEventListener("submit", async e => {
   if (data._honey) { out.textContent = "Thanks — your message has been sent."; f.reset(); return; } // bot trap
   delete data._honey;
   const endpoint = (PROFILE.formEndpoint || "").trim();
+  const subject = `Portfolio inquiry from ${data.name}`;
+  const plainBody = `Name: ${data.name}\nEmail: ${data.email}\nCompany: ${data.company || "—"}\n\n${data.message}`;
   if (!endpoint) {
-    out.classList.add("err");
-    out.textContent = `The form isn't connected yet — please email me directly at ${PROFILE.email}.`;
+    // No backend configured — open the visitor's email app with everything pre-filled.
+    window.location.href = `mailto:${PROFILE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(plainBody)}`;
+    out.textContent = "Opening your email app with the message pre-filled — just hit send.";
+    f.reset();
     return;
   }
   btn.disabled = true; out.textContent = "Sending…";

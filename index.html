@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yashdeep Singh Yash — Software Developer & Cybersecurity Specialist</title>
+<meta name="description" content="Yashdeep Singh Yash builds secure, production-ready software. Software Development Diploma and Cybersecurity Degree from SAIT. Based in Calgary, Alberta.">
+<meta name="author" content="Yashdeep Singh Yash">
+<meta name="robots" content="index, follow">
+<!-- ✏️ Replace https://yourdomain.com everywhere in this <head> with your real site address -->
+<link rel="canonical" href="https://yourdomain.com/">
+
+<!-- LinkedIn / Facebook / Slack preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Yashdeep Singh Yash">
+<meta property="og:title" content="Yashdeep Singh Yash — Software Developer & Cybersecurity Specialist">
+<meta property="og:description" content="Secure software, engineered with intent. Full-stack development with a cybersecurity background. Calgary, AB.">
+<meta property="og:url" content="https://yourdomain.com/">
+<meta property="og:image" content="https://yourdomain.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<!-- X / Twitter preview -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yashdeep Singh Yash — Software Developer & Cybersecurity Specialist">
+<meta name="twitter:description" content="Secure software, engineered with intent.">
+<meta name="twitter:image" content="https://yourdomain.com/og-image.png">
+
+<!-- Structured data: helps Google show your name, title and profiles -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Yashdeep Singh Yash",
+  "givenName": "Yashdeep Singh",
+  "familyName": "Yash",
+  "alternateName": "Yash",
+  "jobTitle": "Software Developer & Cybersecurity Specialist",
+  "url": "https://yourdomain.com/",
+  "image": "https://yourdomain.com/og-image.png",
+  "email": "mailto:y.yashjagait@gmail.com",
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Southern Alberta Institute of Technology (SAIT)", "url": "https://www.sait.ca" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Calgary", "addressRegion": "AB", "addressCountry": "CA" },
+  "sameAs": ["https://www.linkedin.com/in/yashdeep-singh-363a53387/", "https://github.com/yourname"],
+  "knowsAbout": ["Software Development", "Cybersecurity", "Application Security", "Full-stack Development", "Penetration Testing", "Cryptography"]
+}
+</script>
+
+<meta name="theme-color" content="#0a0a0c" id="themeColor">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Visitor analytics: add your GoatCounter code to PROFILE.goatcounter in script.js (see README). -->
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="liquid" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="2" seed="3" result="n"/>
+    <feGaussianBlur in="n" stdDeviation="3" result="s"/>
+    <feDisplacementMap in="SourceGraphic" in2="s" scale="22" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<div class="progress" aria-hidden="true"></div>
+<div class="bg" aria-hidden="true">
+  <div class="aurora"></div>
+  <div class="grid"></div>
+  <div class="noise"></div>
+  <div class="spot"></div>
+</div>
+
+<header class="nav">
+  <div class="nav-inner glass">
+    <a href="#top" class="brand"><span class="mark">YS</span><span class="brand-name">Yashdeep Singh Yash</span></a>
+    <nav id="menu">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#work">Work</a>
+      <a href="#lab">Lab</a>
+      <a href="#approach">Approach</a>
+      <a href="#experience">Experience</a>
+    </nav>
+    <a href="#contact" class="btn btn-sm btn-light">Get in touch</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-copy" id="heroCopy">
+    <p class="eyebrow reveal"><span class="pulse"></span>Available for full-time roles · Calgary, AB</p>
+    <h1 id="heroTitle">Secure software,<br>engineered with <em>intent.</em></h1>
+    <p class="sub reveal">I’m Yash — a software developer with a cybersecurity degree. I design and build applications that are fast, maintainable and secure from the first commit — not patched after the breach.</p>
+    <div class="actions reveal">
+      <a href="#work" class="btn btn-primary">View selected work <span class="arrow">→</span></a>
+      <a href="resume.pdf" class="btn btn-glass glass" download data-track="resume-download">Download résumé</a>
+    </div>
+    <ul class="creds reveal">
+      <li><span class="k">Diploma · SAIT</span>Software Development</li>
+      <li><span class="k">Degree · SAIT</span>Cybersecurity</li>
+      <li><span class="k">Focus</span>AppSec · Full-stack</li>
+    </ul>
+  </div>
+
+  <div class="hero-visual" id="parallax">
+    <!-- Simple animated lock (pure SVG + CSS) -->
+    <div class="orbit" aria-hidden="true">
+      <svg viewBox="0 0 420 420">
+        <defs>
+          <radialGradient id="obCore" cx="50%" cy="45%" r="55%">
+            <stop offset="0" stop-color="#8fb8ff" stop-opacity=".35"/><stop offset="1" stop-color="#8fb8ff" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="obScan" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#8fb8ff" stop-opacity="0"/><stop offset="1" stop-color="#b9a8ff" stop-opacity=".9"/>
+          </linearGradient>
+          <linearGradient id="obLock" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#eef2ff"/><stop offset="1" stop-color="#9aa7c7"/>
+          </linearGradient>
+        </defs>
+        <circle class="ob-glow" cx="210" cy="210" r="120" fill="url(#obCore)"/>
+        <g class="ob-r1"><circle cx="210" cy="210" r="196" fill="none" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 9"/></g>
+        <g class="ob-r2">
+          <circle cx="210" cy="210" r="156" fill="none" stroke="rgba(255,255,255,.09)"/>
+          <circle cx="366" cy="210" r="4" fill="#6ee7b7"/><circle cx="54" cy="210" r="3" fill="#8fb8ff"/>
+        </g>
+        <g class="ob-scan"><path d="M210 54 A156 156 0 0 1 345 132" fill="none" stroke="url(#obScan)" stroke-width="2" stroke-linecap="round"/></g>
+        <g class="ob-r3">
+          <circle cx="210" cy="210" r="112" fill="none" stroke="rgba(255,255,255,.14)" stroke-dasharray="1 5"/>
+          <circle cx="210" cy="98" r="3" fill="#b9a8ff"/>
+        </g>
+        <circle class="ob-ring" cx="210" cy="210" r="70" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.18)"/>
+        <g class="ob-lock">
+          <path class="ob-shackle" d="M190 206 V188 a20 20 0 0 1 40 0 V206" fill="none" stroke="url(#obLock)" stroke-width="7" stroke-linecap="round"/>
+          <rect x="180" y="202" width="60" height="46" rx="10" fill="url(#obLock)"/>
+          <circle cx="210" cy="221" r="5" fill="#1a1d26"/><rect x="208" y="223" width="4" height="12" rx="2" fill="#1a1d26"/>
+        </g>
+        <circle class="ob-pulse" cx="210" cy="210" r="70" fill="none" stroke="#6ee7b7"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" id="marqueeWrap" aria-label="Technologies">
+  <div class="track mono" id="marquee"></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="sec-head reveal"><span class="idx mono">00</span><h2>About</h2></div>
+  <div class="about">
+    <div class="about-text reveal">
+      <p class="lead">Most teams separate the people who build software from the people who secure it. I was trained to do both.</p>
+      <p>My Software Development Diploma from SAIT gave me a strong foundation in full-stack engineering, databases and agile delivery. My Cybersecurity Degree, also from SAIT, taught me how real systems get attacked — and how to design them so they don't. The result is code that ships quickly and holds up under security.</p>
+      <p>I care about clear architecture, readable code, automated testing and threat modelling early in the process, when fixing issues is cheapest.</p>
+    </div>
+    <div class="stats">
+      <div class="stat glass reveal" data-speed="-0.04"><b data-count="15">0</b><span>Projects delivered</span></div>
+      <div class="stat glass reveal" data-speed="0.04"><b data-count="40">0</b><span>CTF challenges solved</span></div>
+      <div class="stat glass reveal" data-speed="-0.04"><b data-count="2">0</b><span>Credentials</span></div>
+      <div class="stat glass reveal" data-speed="0.04"><b data-count="60" data-suffix="%">0</b><span>Fewer vulnerabilities in code reviews</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise" class="section">
+  <div class="sec-head reveal"><span class="idx mono">00</span><h2>Expertise</h2></div>
+  <div class="bento" id="bento"></div>
+  <div class="certs reveal">
+    <p class="mono label">Certifications</p>
+    <div class="cert-row" id="certs"></div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="section">
+  <div class="sec-head reveal"><span class="idx mono">00</span><h2>Selected work</h2>
+    <div class="filters">
+      <button class="filter active" data-f="all">All</button>
+      <button class="filter" data-f="Engineering">Engineering</button>
+      <button class="filter" data-f="Security">Security</button>
+    </div>
+  </div>
+  <div class="work" id="work-list"></div>
+</section>
+
+<!-- LAB: ENCRYPTION DEMO -->
+<section id="lab" class="section">
+  <div class="sec-head reveal"><span class="idx mono">00</span><h2>Lab: encryption, live</h2></div>
+  <p class="sub lab-intro reveal">Type a message and a passphrase. Your browser derives a key and encrypts it with AES-256-GCM — the same standard used by banks and messaging apps. Try a wrong passphrase, or tamper with the ciphertext, and watch the integrity check reject it.</p>
+  <div class="lab glass reveal">
+    <span class="edge"></span>
+    <div class="lab-in">
+      <label>Message<textarea id="labMsg" rows="3" maxlength="500">Meet me at the interview on Monday.</textarea></label>
+      <label>Passphrase
+        <span class="pass-wrap"><input id="labPass" type="password" value="correct horse battery staple" autocomplete="off"><button type="button" id="labShow" class="mini">Show</button></span>
+      </label>
+      <div class="lab-btns">
+        <button class="btn btn-primary" id="labEnc">Encrypt <span class="arrow">→</span></button>
+        <button class="btn btn-glass glass" id="labDec" disabled>Decrypt</button>
+        <button class="btn btn-ghost" id="labTamper" disabled>Tamper with data</button>
+      </div>
+      <p class="lab-status mono" id="labStatus" role="status">Ready. Nothing leaves your device.</p>
+    </div>
+    <div class="lab-out">
+      <p class="mono label">Ciphertext (Base64)</p>
+      <div class="cipher mono" id="labCipher">—</div>
+      <p class="mono label">Decrypted</p>
+      <div class="plain" id="labPlain">—</div>
+      <dl class="lab-meta mono">
+        <dt>Algorithm</dt><dd>AES-256-GCM</dd>
+        <dt>Key derivation</dt><dd>PBKDF2-SHA256 · 250,000 iterations</dd>
+        <dt>Salt</dt><dd id="labSalt">—</dd>
+        <dt>IV</dt><dd id="labIv">—</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach" class="section">
+  <div class="sec-head reveal"><span class="idx mono">00</span><h2>How I work</h2></div>
+  <div class="approach">
+    <div class="globe-wrap reveal" data-speed="0.06">
+      <canvas id="globe" aria-label="Interactive globe showing Calgary connected to cities worldwide"></canvas>
+      <div class="globe-label glass"><span class="pulse"></span><div><b>Based in Calgary but ready to work anywhere.</b><small>....................................................................................</small></div></div>
+    </div>
+    <ol class="steps" id="steps">
+      <li class="step glass"><span class="edge"></span><span class="mono n">01</span><div><h3>Threat model first</h3><p>Before writing code, I map assets, entry points and likely attackers, so security decisions shape the architecture instead of patching it later.</p><span class="deliv mono">→ Data-flow diagram · STRIDE risks</span></div></li>
+      <li class="step glass"><span class="edge"></span><span class="mono n">02</span><div><h3>Build with secure defaults</h3><p>Typed APIs, parameterised queries, least-privilege access and strong authentication are the baseline — not optional extras.</p><span class="deliv mono">→ Clean, reviewed, documented code</span></div></li>
+      <li class="step glass"><span class="edge"></span><span class="mono n">03</span><div><h3>Verify continuously</h3><p>Unit and integration tests, static analysis and dependency scanning run in CI on every commit, with manual testing for business-logic flaws.</p><span class="deliv mono">→ CI pipeline · SAST/DAST reports</span></div></li>
+      <li class="step glass"><span class="edge"></span><span class="mono n">04</span><div><h3>Monitor and respond</h3><p>Structured logging, alerting and a clear incident plan mean problems are detected early and handled calmly.</p><span class="deliv mono">→ Dashboards · Runbooks</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="sec-head reveal"><span class="idx mono">00</span><h2>Experience & education</h2></div>
+  <ol class="xp" id="xp"></ol>
+</section>
+
+<!-- CONSOLE -->
+<section id="console" class="section">
+  <div class="sec-head reveal"><span class="idx mono">00</span><h2>Prefer the command line?</h2></div>
+  <div class="term glass reveal" id="term">
+    <div class="code-head"><span></span><span></span><span></span><p>Terminal </p></div>
+    <div class="term-body" id="termBody"><p class="muted">Type <b>help</b> to see available commands.</p></div>
+    <form class="term-input" id="termForm" autocomplete="off">
+      <span class="prompt">guest@unknown:~$</span>
+      <input id="termIn" aria-label="Terminal input" spellcheck="false">
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact">
+  <div class="contact-copy reveal">
+    <span class="idx mono">00</span>
+    <h2 class="display">Let's build something <em>secure.</em></h2>
+    <p class="sub">Open to software development, application security and security engineering roles. I usually reply within a day.</p>
+    <button class="email glass" id="copyEmail" data-email="y.yashjagait@gmail.com">
+      <span class="mono">y.yashjagait@gmail.com</span><span class="copy-label">Copy</span>
+    </button>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/yashdeep-singh-363a53387/" target="_blank" rel="noopener" data-track="linkedin">LinkedIn ↗</a>
+      <a href="https://github.com/yourname" target="_blank" rel="noopener" data-track="github">GitHub ↗</a>
+      <a href="resume.pdf" download data-track="resume-download">Résumé ↓</a>
+    </div>
+  </div>
+  <!-- Messages are saved to your private Google Sheet via PROFILE.formEndpoint (script.js). See README. -->
+  <form class="form glass reveal" id="form" novalidate>
+    <label>Name<input name="name" required autocomplete="name"></label>
+    <label>Email<input name="email" type="email" required autocomplete="email"></label>
+    <label><span>Company <span class="opt">(optional)</span></span><input name="company" autocomplete="organization"></label>
+    <label>Message<textarea name="message" rows="4" required></textarea></label>
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn btn-primary" type="submit" id="formBtn">Send message <span class="arrow">→</span></button>
+    <p class="form-out mono" id="formOut" role="status"></p>
+  </form>
+</section>
+</main>
+
+<div class="wordmark" aria-hidden="true">Yashdeep Singh Yash</div>
+<footer>
+  <p>© <span id="yr"></span> Yashdeep Singh Yash</p>
+  <p class="mono">Built from scratch · Privacy-friendly · No cookies</p>
+  <a href="#top">Back to top ↑</a>
+</footer>
+
+
+<!-- Floating LinkedIn / GitHub buttons -->
+<div class="social-float" aria-label="Profiles">
+  <a class="sf glass" href="https://www.linkedin.com/in/yashdeep-singh-363a53387/" target="_blank" rel="noopener" aria-label="LinkedIn profile" data-track="linkedin-float" id="sfLinkedin">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+    <span class="sf-tip">LinkedIn</span>
+  </a>
+  <a class="sf glass" href="https://github.com/yourname" target="_blank" rel="noopener" aria-label="GitHub profile" data-track="github-float" id="sfGithub">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.58v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3"/></svg>
+    <span class="sf-tip">GitHub</span>
+  </a>
+</div>
+
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script src="script.js"></script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  const DEFAULT_LINE_HEIGHT = 16;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  const PICK_CAPABILITIES = ["pick"];
+  const PICK_CHAIN_LENGTH = 4;
+  const PICK_MAX_TEXT_CHARS = 120;
+  const PICK_MAX_HTML_CHARS = 300;
+
+  function truncate(value, maxChars) {
+    return value.length > maxChars ? value.slice(0, maxChars - 1) + "…" : value;
+  }
+
+  function isPickableElement(element) {
+    return (
+      element instanceof Element &&
+      element !== document.documentElement &&
+      element !== document.body
+    );
+  }
+
+  function resolvePickTarget(x, y) {
+    if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+    const element = document.elementFromPoint(x, y);
+    return isPickableElement(element) ? element.closest("svg") || element : null;
+  }
+
+  function pickLabel(element) {
+    if (element.id) return element.localName + "#" + element.id;
+    return [element.localName].concat(Array.from(element.classList).slice(0, 2)).join(".");
+  }
+
+  // Only attributes that help find the element in source. data-* values and URL
+  // query strings or fragments can carry tokens.
+  const PICK_ATTRIBUTES = new Set([
+    "id",
+    "class",
+    "name",
+    "type",
+    "role",
+    "alt",
+    "aria-label",
+    "href",
+    "src",
+  ]);
+
+  function pickAttributeValue(attribute) {
+    return attribute.name === "href" || attribute.name === "src"
+      ? attribute.value.split(/[?#]/)[0]
+      : attribute.value;
+  }
+
+  function describePickElement(element) {
+    const chain = [];
+    for (
+      let current = element;
+      isPickableElement(current) && chain.length < PICK_CHAIN_LENGTH;
+      current = current.parentElement
+    ) {
+      chain.unshift(current);
+    }
+    const attributes = Array.from(element.attributes)
+      .filter((attribute) => PICK_ATTRIBUTES.has(attribute.name))
+      .map((attribute) => ` ${attribute.name}="${pickAttributeValue(attribute).replace(/"/g, "&quot;")}"`)
+      .join("");
+    const text = (element.innerText || element.textContent || "").replace(/\s+/g, " ").trim();
+    return {
+      chain: chain.map(pickLabel),
+      html: truncate(`<${element.localName}${attributes}>`, PICK_MAX_HTML_CHARS),
+      text: text ? truncate(text, PICK_MAX_TEXT_CHARS) : undefined,
+    };
+  }
+
+  // Hover asks once per frame, and innerText on a large section forces layout,
+  // so only the rect is re-read while the pointer stays on the same element.
+  // Clicks ask for fresh details since the page may have changed the element.
+  let lastPick = null;
+
+  function describePickTarget(element, fresh) {
+    if (fresh || lastPick?.element !== element) {
+      lastPick = { element, details: describePickElement(element) };
+    }
+    const rect = element.getBoundingClientRect();
+    return {
+      rect: { x: rect.left, y: rect.top, width: rect.width, height: rect.height },
+      ...lastPick.details,
+    };
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+      capabilities: PICK_CAPABILITIES,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_PICK") {
+      const element = resolvePickTarget(event.data.x, event.data.y);
+      postToTrustedTop({
+        type: "INLINE_EDIT_PICK_RESULT",
+        seq: event.data.seq,
+        target: element ? describePickTarget(element, event.data.fresh === true) : null,
+      });
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_BY") {
+      const { deltaX, deltaY, deltaMode } = event.data;
+      if (!scrollForwarding || !Number.isFinite(deltaX) || !Number.isFinite(deltaY)) return;
+      if (deltaMode !== 0 && deltaMode !== 1 && deltaMode !== 2) return;
+      const lineHeight =
+        parseFloat(getComputedStyle(document.documentElement).lineHeight) || DEFAULT_LINE_HEIGHT;
+      const scaleX = deltaMode === 1 ? lineHeight : deltaMode === 2 ? window.innerWidth : 1;
+      const scaleY = deltaMode === 1 ? lineHeight : deltaMode === 2 ? window.innerHeight : 1;
+      // The selection overlay receives the wheel event instead of this iframe.
+      // Instant scrolling preserves trackpad deltas even on smooth-scroll sites.
+      window.scrollBy({ left: deltaX * scaleX, top: deltaY * scaleY, behavior: "instant" });
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>

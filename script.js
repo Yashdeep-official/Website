@@ -5,7 +5,7 @@ const PROFILE = {
   name: "Yashdeep Singh Yash",
   email: "y.yashjagait@gmail.com",
   linkedin: "https://www.linkedin.com/in/yashdeep-singh-363a53387/",
-  github: "https://github.com/Yashdeep-official",
+  github: "https://github.com/Yash",
   location: "Calgary, AB",
   // Contact form backend: paste your Google Apps Script Web App URL here (see README).
   // Every message is stored in your private Google Sheet with the date and time it arrived.

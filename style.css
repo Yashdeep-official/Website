@@ -190,7 +190,7 @@ pre .c{color:#5c5c66}pre .k{color:var(--accent-2)}pre .f{color:var(--accent)}pre
 .xp .xp-list{list-style:none;margin:0;padding:0;max-width:640px}
 .xp .xp-list li{display:block;padding:0 0 9px;border-bottom:0;color:var(--muted);font-weight:300;font-size:.95rem;line-height:1.6}
 .xp .xp-list li:last-child{padding-bottom:0}
-.xp .xp-list li::before{content:"â†’  ";color:var(--accent);font-family:var(--mono);font-size:.78rem}
+.xp .xp-list li::before{content:">";color:var(--accent);font-family:var(--mono);font-size:.78rem}
 .xp .xp-list li:hover{padding-left:0}
 
 /* ---------- Console ---------- */
